@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #eee;
+}
+
+.main {
+    background-color: #eee;
+/*    text-align: center;*/
+}
+
+.head{
+    text-align: center;
+    padding: 32px;
+    color: #333;
+}
+
+.category-ul-list {
+    text-align: left;
+    width: 60%;
+    margin: auto;
+    padding: auto;
+}
+
+.category-li-item {
+    margin: 12px 0 12px 0;
+}
+
+@media (max-width: 500px) {
+    .category-ul-list {
+        width: 90%;
+        padding: 0 0 0 20px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,110 @@
+<DOCTYPE !>
+<html lang="ch">
+<head>
+    <title>Survey Form</title>
+    <meta charset='UTF-8'/>
+    <link href="index.css" style="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title">卫生棉使用调查</h1>
+    <div id="container">
+        <p id="description"><em>As you may be aware the Scottish Government is introducing free sanitary products in universities in an attempt to reduce period poverty and the impact it has on people who menstruates lives.</em></p>
+        <p>非常感谢您花时间完成这份问卷！</p>
+        <form id="survey-form" action="upload-survey-result">
+            <h3>1. 春去秋来几多载？</h3>
+            <label><input type="radio" name="your-age" value="1">18-24</input><label>
+            <label><input type="radio" name="your-age" value="2">25-34</input><label>
+            <label><input type="radio" name="your-age" value="3">35-44</input><label>
+            <label><input type="radio" name="your-age" value="4">45-54</input><label>
+            <label><input type="radio" name="your-age" value="5">55+</input><label>
+            
+            <h3>2. 你的性别？</h3>
+            <label><input type="radio" name="your-gender" value="1">女性</input><label>
+            <label><input type="radio" name="your-gender" value="2">男性</input><label>
+            <label><input type="radio" name="your-gender" value="3">无性别</input><label>
+            <label><input type="radio" name="your-gender" value="4">不想告知</input><label>
+            <label>使用别的词语（请描述）<input type="text" placeholder="请描述你的性别"></label>
+            
+            <h3>3. 你现在在经期使用的是哪种产品?</h3>
+            <label><input type="checkbox" name="currently-products" value="1">Disposable Sanitary Pad/Towel without wings</input><label>
+            <label><input type="checkbox" name="currently-products" value="1">
+                Disposable Sanitary Pad/Towel with wings</input><label>
+            <label><input type="checkbox" name="currently-products" value="2">Reusable Sanitary Pad/Towel with wings</input><label>
+            <label><input type="checkbox" name="currently-products" value="3">Plastic Applicator Tampons</input><label>
+            <label><input type="checkbox" name="currently-products" value="4">Paper Applicator Tampons</input><label>
+            <label><input type="checkbox" name="currently-products" value="5">Reusable Sanitary Pad/Towel without wings</input><label>
+            <label><input type="checkbox" name="currently-products" value="6">
+                Menstrual Cup </input><label>
+            <label><input type="checkbox" name="currently-products" value="7">
+                Tampon without an applicator </input><label>
+            <label><input type="checkbox" name="currently-products" value="8">Panty Liner</input><label>
+            <label><input type="checkbox" name="currently-products" value="9">Reusable Period Underwear</input><label>
+            <label>其它（请描述）<input type="text" placeholder="请指出"></input><label>
+            
+            <h3>4. 你会考虑使用重复性的卫生产品吗？</h3>
+            <label><input type="radio" name="consider-reusable" value="1"></input>会</label>
+            <label><input type="radio" name="consider-reusable" value="2"></input>不会</label>
+            <label><input type="radio" name="consider-reusable" value="3"></input>可能会</label>
+            <label><input type="radio" name="consider-reusable" value="4"></input>已经在用了</label>
+            
+            <h3>5. 哪种卫生产品你可能会使用？</h3>
+            <select name="perfer-product" id="dropdown">
+                <option value="1">Menstrual Cup</option>
+                <option value="2">Reusable Sanitary Pad/Towel with wings</option>
+                <option value="3">Reusable Period Underwear</option>
+                <option value="4">Reusable Menstrual Sponges</option>
+                <option value="5">Reusable Sanitary Pad/Towel without wings</option>
+                <option value="6">Wouldn't use reusable sanitary products</option>
+                <option value="0">其它</option>
+            </select>
+            
+            <h3>6. 你正使用哪种吸水能力的卫生产品？</h3>
+            <label><input type="checkbox" name="absorbency-level" value="1"></input>少量</label>
+            <label><input type="checkbox" name="absorbency-level" value="2"></input>中量</label>
+            <label><input type="checkbox" name="absorbency-level" value="3"></input>大量</label>
+            
+            <h3>7. 开销会影响你对卫生产品的选择吗？</h3>
+            <label><input type="radio" name="cost-affect" value="1"></input>会</label>
+            <label><input type="radio" name="cost-affect" value="0"></input>不会</label>
+            
+            <h3>8. 卫生产品的开销对你的经济影响有多大？</h3>
+<!--            <input type="range"  min=0 max=100 name="cost-affect-range"></input>-->
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="cost-affect-range">
+                    <p>Value: <span id="rangevalue"></span></p>
+            </div>
+            
+            <h3>9.邮箱</h3>
+            <label id="email-label">你的邮箱,最终的调查结果将发到这个邮箱:<input type="email" id="email" for="email" placeholder="example@xxx.com" required></input></label>
+            
+            <h3>10.想法</h3>
+            <label id="name-label">对这个调查有想说的吗？<input type="text" id="name" for="name" placeholder="什么都欢迎诉说" required></input></label>
+            <h3>写不下，来这里：</h3>
+            <textarea rows="5" cols="100" pleaceholder="在这写你更多的想法">
+            </textarea>
+            
+            <h3>11.年龄</h3>
+            <label id="number-label">想告诉我们精确年龄？<input type="number" min="10" max="150" id="number" placeholder="年龄"></input>
+                
+            <h3> </h3>
+            <input type="submit" id="submit">
+            
+        </form>
+        
+        <script>
+            var slider = document.getElementById("cost-affect-range");
+            var output = document.getElementById("rangevalue");
+            output.innerHTML = slider.value;
+            
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
+        
+    </div>
+    
+    
+</body>
+</html>
+    

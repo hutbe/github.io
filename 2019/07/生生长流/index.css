@@ -39,7 +39,7 @@ body {
 #img-caption {
     margin: 0 0 0 auto;
     padding:  0 0 0 auto;
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -50,9 +50,9 @@ body {
 
 #timeLineList {
     text-align: left;
-    width: 60%;
-    margin: auto;
-    padding: auto;
+    width: 90%;
+    padding: 0 0 0 20px;
+    font-size: 14px;
 }
 
 li {
@@ -69,24 +69,24 @@ li {
 }
 
 #moreInformation {
-    font-size: 22px;
+    font-size: 18px;
     color: #111;
     padding: 4px 0 0 12px;
     margin: 0;
 }
 
-@media (max-width: 760px) {
+@media (min-width: 760px) {
     #timeLineList {
-        width: 90%;
-        padding: 0 0 0 20px;
-        font-size: 14px;
+        width: 60%;
+        margin: auto;
+        padding: auto;
     }
     
     #img-caption {
-        font-size: 12px;
+        font-size: 14px;
     }
     
     #moreInformation {
-        font-size: 18px;;
+        font-size: 22px;;
     }
 }
